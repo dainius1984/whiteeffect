@@ -4,7 +4,7 @@ const InfoSection = () => {
   const services = [
     {
       id: 1,
-      title: 'Sprzątanie Biurowców',
+      title: 'Tanie Sprzątanie Biurowców',
       description: 'Profesjonalne usługi sprzątania biurowców i powierzchni komercyjnych, zapewniające czyste i reprezentacyjne miejsce pracy.',
       icon: (
         <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@ const InfoSection = () => {
     },
     {
       id: 2,
-      title: 'Sprzątanie Budynków Publicznych',
+      title: 'Tanie Sprzątanie Budynków Publicznych',
       description: 'Kompleksowe usługi utrzymania czystości w urzędach, szkołach i innych obiektach użyteczności publicznej.',
       icon: (
         <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@ const InfoSection = () => {
     },
     {
       id: 3,
-      title: 'Sprzątanie Mieszkań i Domów',
+      title: 'Tanie Sprzątanie Mieszkań i Domów',
       description: 'Profesjonalne usługi sprzątania mieszkań i domów prywatnych, dostosowane do indywidualnych potrzeb klientów.',
       icon: (
         <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@ const InfoSection = () => {
     },
     {
       id: 4,
-      title: 'Usługi Specjalistyczne',
+      title: 'Specjalistyczne Usługi Sprzątające',
       description: 'Mycie okien, pranie wykładzin i tapicerek, czyszczenie po remontach i inne specjalistyczne usługi sprzątające.',
       icon: (
         <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -44,13 +44,21 @@ const InfoSection = () => {
     },
   ];
 
+  const locations = [
+    { id: 1, name: 'Wrocław' },
+    { id: 2, name: 'Wilkszyn' },
+    { id: 3, name: 'Pisarzowice' },
+    { id: 4, name: 'Marszowice' },
+    { id: 5, name: 'Leśnica' },
+  ];
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasze Usługi</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Firma WhiteEffect oferuje kompleksowe usługi sprzątające najwyższej jakości we Wrocławiu i okolicach. 
+            Firma WhiteEffect oferuje tanie, kompleksowe usługi sprzątające najwyższej jakości we Wrocławiu i okolicach. 
             Dzięki 20-letniemu doświadczeniu gwarantujemy profesjonalizm i niezawodność.
           </p>
         </div>
@@ -68,7 +76,15 @@ const InfoSection = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center">
+        <div className="mt-16 mb-12 text-center">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Gdzie działamy?</h3>
+          <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto mb-8">
+            {locations.map((location) => (
+              <div key={location.id} className="bg-gray-100 px-4 py-2 rounded-full text-gray-700">
+                {`Tanie sprzątanie ${location.name}`}
+              </div>
+            ))}
+          </div>
           <a
             href="#contact"
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300 inline-block"
