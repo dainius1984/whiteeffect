@@ -53,7 +53,7 @@ function App() {
                   Zaufało nam już wielu klientów indywidualnych oraz instytucji publicznych, dzięki naszej niezawodności, punktualności i dbałości o najwyższe standardy czystości.
                 </p>
                 <p className="text-gray-600">
-                  <strong>Obszar działania:</strong> Oferujemy tanie usługi sprzątające w następujących lokalizacjach: Wrocław, Wilkszyn, Pisarzowice, Marszowice oraz Leśnica.
+                  <strong>Obszar działania:</strong> Oferujemy profesjonalne usługi sprzątające w następujących lokalizacjach: Wrocław, Wilkszyn, Pisarzowice, Marszowice oraz Leśnica.
                 </p>
               </div>
             </div>
@@ -126,7 +126,7 @@ function App() {
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6 text-center">
           <p>© {new Date().getFullYear()} WhiteEffect | Wrocław. Wszelkie prawa zastrzeżone.</p>
-          <p className="mt-2 text-sm text-gray-400">Tanie sprzątanie: Wrocław, Wilkszyn, Pisarzowice, Marszowice, Leśnica</p>
+          <p className="mt-2 text-sm text-gray-400">Profesjonalne usługi sprzątające: Wrocław, Wilkszyn, Pisarzowice, Marszowice, Leśnica</p>
         </div>
       </footer>
     </div>
