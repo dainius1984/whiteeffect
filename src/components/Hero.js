@@ -21,14 +21,11 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20 text-center mt-16">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-playfair">
-          Tanie Usługi Sprzątające
+          Profesjonalne Usługi Sprzątające
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-6 font-montserrat font-light leading-relaxed">
+        <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 font-montserrat font-light leading-relaxed">
           20 lat doświadczenia w sprzątaniu biurowców, budynków publicznych, mieszkań i domów
           we Wrocławiu i okolicach.
-        </p>
-        <p className="text-lg text-white max-w-3xl mx-auto mb-10 font-montserrat font-light">
-          Świadczymy usługi w: Wrocławiu, Wilkszynie, Pisarzowicach, Marszowicach i Leśnicy
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
