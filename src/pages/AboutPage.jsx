@@ -5,11 +5,12 @@ import Footer from '../components/Footer';
 const AboutPage = () => {
   return (
     <div className="about-page">
-      <div className="bg-gray-900 shadow-lg py-6">
+      {/* Zaktualizowany kontener Navbar - dokładnie taki sam jak na innych stronach */}
+      <div className="fixed top-0 left-0 right-0 z-40 bg-gray-900 shadow-lg py-3">
         <Navbar />
       </div>
       
-      <main className="pt-6">
+      <main className="pt-24">
         <section id="about" className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">

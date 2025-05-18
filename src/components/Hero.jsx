@@ -10,21 +10,20 @@ const Hero = () => {
         {/* Nakładka ciemności */}
         <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
         
-        {/* Wideo - najprostsze ustawienia */}
+        {/* Wideo */}
         <video 
           className="absolute w-full h-full object-cover z-5" 
           autoPlay 
           loop 
           muted 
           playsInline
-          poster="/img/hero-poster.jpg"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
       
-      {/* Navbar */}
-      <div className="relative z-20 pt-6">
+      {/* Navbar - w tym przypadku nie ma fixed, bo jest wewnątrz Hero */}
+      <div className="relative z-20 py-3">
         <Navbar isTransparent={true} />
       </div>
       
@@ -40,7 +39,7 @@ const Hero = () => {
             we Wrocławiu i okolicach.
           </p>
           
-          {/* Proste przyciski z ładnym stylem */}
+          {/* Przyciski */}
           <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
             <Link
               to="/oferta"

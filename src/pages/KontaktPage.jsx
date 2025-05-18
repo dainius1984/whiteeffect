@@ -6,6 +6,7 @@ import Contact from '../components/Contact';
 const KontaktPage = () => {
   return (
     <div className="kontakt-page">
+      {/* Kontener Navbar - zachowany istniejący styl, który jest prawidłowy */}
       <div className="fixed top-0 left-0 right-0 z-40 bg-gray-900 shadow-lg py-3">
         <Navbar />
       </div>
