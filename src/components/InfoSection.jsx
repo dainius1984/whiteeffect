@@ -44,14 +44,6 @@ const InfoSection = () => {
     },
   ];
 
-  const locations = [
-    { id: 1, name: 'Wrocław' },
-    { id: 2, name: 'Wilkszyn' },
-    { id: 3, name: 'Pisarzowice' },
-    { id: 4, name: 'Marszowice' },
-    { id: 5, name: 'Leśnica' },
-  ];
-
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -82,7 +74,7 @@ const InfoSection = () => {
             Świadczymy profesjonalne usługi we Wrocławiu oraz okolicach, w tym w Wilkszynie, Pisarzowicach, Marszowicach i Leśnicy.
           </p>
           <a
-            href="#contact"
+            href="kontakt"
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300 inline-block"
           >
             Zamów Usługę
