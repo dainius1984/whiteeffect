@@ -5,31 +5,32 @@ import Footer from '../components/Footer';
 const AboutPage = () => {
   return (
     <div className="about-page">
-      {/* Zaktualizowany kontener Navbar - dokładnie taki sam jak na innych stronach */}
+      {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 right-0 z-40 bg-gray-900 shadow-lg py-3">
         <Navbar />
       </div>
-      
+
       <main className="pt-24">
+        {/* Hero Section */}
         <section id="about" className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">O Nas</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Firma WhiteEffect to 20 lat doświadczenia w profesjonalnym sprzątaniu na terenie Wrocławia i okolic.
+                Firma WhiteEffect to 20 lat doświadczenia w profesjonalnym sprzątaniu na terenie Wrocławia i okolic. Poznaj naszą historię i wartości!
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <p className="text-gray-600 mb-4">
-                  Od 20 lat świadczymy najwyższej jakości usługi sprzątające dla biurowców, budynków publicznych oraz domów i mieszkań prywatnych we Wrocławiu.
+                  Od 20 lat świadczymy najwyższej jakości usługi sprzątające dla biurowców, budynków publicznych, domów i mieszkań prywatnych we Wrocławiu.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Nasz zespół składa się z doświadczonych i wykwalifikowanych pracowników, którzy dbają o każdy szczegół podczas sprzątania. Używamy tylko profesjonalnych środków czyszczących, które są skuteczne i bezpieczne dla ludzi oraz środowiska.
+                  Nasz zespół składa się z doświadczonych i wykwalifikowanych pracowników, którzy dbają o każdy szczegół podczas sprzątania. Używamy tylko profesjonalnych środków czyszczących, które są skuteczne, bezpieczne dla ludzi oraz przyjazne dla środowiska.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Zaufało nam już wielu klientów indywidualnych oraz instytucji publicznych, dzięki naszej niezawodności, punktualności i dbałości o najwyższe standardy czystości.
+                  Zaufanie, jakie otrzymujemy od klientów indywidualnych i instytucji publicznych, wynika z naszej niezawodności, punktualności i nieustającej dbałości o najwyższe standardy czystości.
                 </p>
                 <p className="text-gray-600">
                   <strong>Obszar działania:</strong> Oferujemy profesjonalne usługi sprzątające w następujących lokalizacjach: Wrocław, Wilkszyn, Pisarzowice, Marszowice oraz Leśnica.
@@ -38,8 +39,74 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Our Story Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasza Historia</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Poznaj drogę, którą przeszliśmy, by stać się liderem w branży sprzątającej.
+              </p>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+              <div className="md:w-1/2">
+                <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-gray-500">Placeholder for Image 1 (e.g., Founding Moment)</p>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  WhiteEffect powstało w 2005 roku z pasji do tworzenia czystych i zdrowych przestrzeni. Założyciel, Jan Kowalski, zaczął od sprzątania małych mieszkań w centrum Wrocławia, wykorzystując jedynie podstawowe narzędzia i ogromne zaangażowanie. Z czasem, dzięki ciężkiej pracy i pozytywnym rekomendacjom, firma rozrosła się, obejmując coraz większe kontrakty.
+                </p>
+                <p className="text-gray-600">
+                  Dziś jesteśmy dumni z każdego klienta, którego obsługujemy, i nieustannie dążymy do doskonalenia naszych usług, łącząc tradycję z nowoczesnymi technologiami.
+                </p>
+              </div>
+              <div className="md:w-1/2">
+                <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-gray-500">Placeholder for Image 2 (e.g., Team at Work)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Video Frame */}
+            <div className="mt-12 text-center">
+              <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center mb-4">
+                <p className="text-gray-500">Placeholder for Video (e.g., Company Story)</p>
+              </div>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Obejrzyj nasze krótkie wideo, które opowiada o początkach WhiteEffect i kluczowych momentach, które ukształtowały naszą markę. Poznaj ludzi i wartości, stojące za każdym sprzątniętym miejscem!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasze Wartości</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                To, co nas wyróżnia, to zaangażowanie w jakość, ekologię i relacje z klientami.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <p className="text-gray-600 mb-4">
+                  - <strong>Jakość:</strong> Każdy projekt traktujemy z najwyższą starannością, dbając o każdy detal.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  - <strong>Ekologia:</strong> Stawiamy na zrównoważone rozwiązania, minimalizując wpływ na środowisko.
+                </p>
+                <p className="text-gray-600">
+                  - <strong>Relacje:</strong> Budujemy długoterminowe partnerships z naszymi klientami, opierając się na zaufaniu i otwartości.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      
+
       <Footer />
     </div>
   );

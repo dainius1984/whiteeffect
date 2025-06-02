@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import OfertaIndywidualna from '../components/OfertaIndywidualna';
+import OfertaDlaFirm from '../components/OfertaDlaFirm';
 
 const OfertaPage = () => {
+  const [activeOffer, setActiveOffer] = useState('individual'); // 'individual' or 'business'
+
   return (
     <div className="oferta-page">
       <div className="fixed top-0 left-0 right-0 z-40 bg-gray-900 shadow-lg py-3">
@@ -9,108 +14,129 @@ const OfertaPage = () => {
       </div>
       
       <main className="pt-24">
-        <section className="py-20 bg-gray-50">
+        {/* Toggle Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasza Oferta</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Profesjonalne usługi sprzątające dostosowane do Twoich potrzeb
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Nasza Oferta</h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                Profesjonalne usługi sprzątające dostosowane do różnych potrzeb
               </p>
-            </div>
-            
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Service Card 1 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+              
+              {/* Enhanced Toggle Buttons */}
+              <div className="flex justify-center mb-8">
+                <div className="relative bg-white p-2 rounded-2xl shadow-lg border border-gray-100 inline-flex">
+                  {/* Sliding background indicator */}
+                  <div 
+                    className={`absolute top-2 bottom-2 w-1/2 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-md transform transition-transform duration-300 ease-in-out ${
+                      activeOffer === 'business' ? 'translate-x-full' : 'translate-x-0'
+                    }`}
+                  />
+                  
+                  <button
+                    onClick={() => setActiveOffer('individual')}
+                    className={`relative z-10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 min-w-[200px] ${
+                      activeOffer === 'individual'
+                        ? 'text-white'
+                        : 'text-gray-600 hover:text-gray-800'
+                    }`}
+                  >
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className={`p-2 rounded-lg transition-colors duration-300 ${
+                        activeOffer === 'individual' 
+                          ? 'bg-white bg-opacity-20' 
+                          : 'bg-blue-50'
+                      }`}>
+                        <svg className={`w-6 h-6 transition-colors duration-300 ${
+                          activeOffer === 'individual' ? 'text-white' : 'text-blue-600'
+                        }`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                      </div>
+                      <div className="text-left">
+                        <div className="text-lg font-bold">Oferta Indywidualna</div>
+                        <div className={`text-sm transition-colors duration-300 ${
+                          activeOffer === 'individual' ? 'text-blue-100' : 'text-gray-500'
+                        }`}>
+                          Domy i mieszkania
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={() => setActiveOffer('business')}
+                    className={`relative z-10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 min-w-[200px] ${
+                      activeOffer === 'business'
+                        ? 'text-white'
+                        : 'text-gray-600 hover:text-gray-800'
+                    }`}
+                  >
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className={`p-2 rounded-lg transition-colors duration-300 ${
+                        activeOffer === 'business' 
+                          ? 'bg-white bg-opacity-20' 
+                          : 'bg-blue-50'
+                      }`}>
+                        <svg className={`w-6 h-6 transition-colors duration-300 ${
+                          activeOffer === 'business' ? 'text-white' : 'text-blue-600'
+                        }`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div className="text-left">
+                        <div className="text-lg font-bold">Oferta dla Firm</div>
+                        <div className={`text-sm transition-colors duration-300 ${
+                          activeOffer === 'business' ? 'text-blue-100' : 'text-gray-500'
+                        }`}>
+                          Biura i budynki
+                        </div>
+                      </div>
+                    </div>
+                  </button>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Sprzątanie biur i powierzchni komercyjnych</h3>
-                <p className="text-gray-600">
-                  Regularne sprzątanie biur, budynków użyteczności publicznej i przestrzeni komercyjnych. Dbamy o czystość w miejscu pracy, co przekłada się na komfort i wydajność pracowników.
-                </p>
               </div>
               
-              {/* Service Card 2 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
+              {/* Additional info cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                  <div className="bg-green-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 mb-2">20 lat doświadczenia</h3>
+                  <p className="text-gray-600 text-sm">Zaufało nam już tysiące klientów</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Sprzątanie domów i mieszkań</h3>
-                <p className="text-gray-600">
-                  Kompleksowe lub wybiórcze sprzątanie domów i mieszkań. Zapewniamy dokładne czyszczenie zgodnie z Twoimi wymaganiami, używając bezpiecznych i skutecznych środków czystości.
-                </p>
-              </div>
-              
-              {/* Service Card 3 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                  <div className="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Dostępni 7 dni w tygodniu</h3>
+                  <p className="text-gray-600 text-sm">Elastyczne terminy i godziny</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Sprzątanie po remontach</h3>
-                <p className="text-gray-600">
-                  Profesjonalne sprzątanie po remontach i budowach. Usuwamy pozostałości budowlane, kurz i brud, przywracając pomieszczeniom czystość i świeżość.
-                </p>
-              </div>
-              
-              {/* Service Card 4 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
+                
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                  <div className="bg-purple-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Bezpłatna wycena</h3>
+                  <p className="text-gray-600 text-sm">Skontaktuj się z nami już dziś</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Mycie okien</h3>
-                <p className="text-gray-600">
-                  Profesjonalne mycie okien w domach, mieszkaniach i budynkach komercyjnych. Używamy specjalistycznego sprzętu i środków, aby zapewnić krystalicznie czyste okna.
-                </p>
               </div>
-              
-              {/* Service Card 5 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Regularne sprzątanie abonamentowe</h3>
-                <p className="text-gray-600">
-                  Usługi sprzątania w stałych, regularnych terminach. Idealne rozwiązanie dla firm i osób prywatnych, które cenią sobie wygodę i porządek bez wysiłku.
-                </p>
-              </div>
-              
-              {/* Service Card 6 */}
-              <div className="bg-white p-6 rounded-xl shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Usługi dodatkowe</h3>
-                <p className="text-gray-600">
-                  Pranie tapicerki, czyszczenie dywanów, odśnieżanie, sprzątanie terenów zewnętrznych i wiele innych usług dostosowanych do indywidualnych potrzeb klienta.
-                </p>
-              </div>
-            </div>
-            
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">
-                Wszystkie nasze usługi są dostępne na terenie Wrocławia i okolic, w tym w miejscowościach: Wilkszyn, Pisarzowice, Marszowice i Leśnica.
-              </p>
-              <a 
-                href="/kontakt" 
-                className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Skontaktuj się z nami
-              </a>
             </div>
           </div>
         </section>
+
+        {/* Content Section */}
+        <div className="transition-all duration-500 ease-in-out">
+          {activeOffer === 'individual' ? <OfertaIndywidualna /> : <OfertaDlaFirm />}
+        </div>
       </main>
       
       <Footer />
