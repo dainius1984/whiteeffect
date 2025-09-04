@@ -7,7 +7,7 @@ const EMAILJS_TEMPLATE_ID = "template_r7rcz39";
 
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
-export const ContactForm = () => {
+export const ContactForm = ({ onClose }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -40,7 +40,10 @@ export const ContactForm = () => {
       );
       setSubmitted(true);
       setForm({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setSubmitted(false), 3000);
+      setTimeout(() => {
+        setSubmitted(false);
+        if (onClose) onClose();
+      }, 3000);
     } catch (err) {
       setError('Przepraszamy, wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
     } finally {
@@ -63,7 +66,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-white/20 max-w-md mx-auto">
+    <div>
       <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center font-playfair">
         Darmowa Wycena
       </h3>
