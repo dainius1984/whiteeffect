@@ -69,24 +69,24 @@ export const ContactForm = ({ onClose }) => {
 
   return (
     <div className="px-2">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mb-4 shadow-lg">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="text-center mb-6">
+        <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mb-3 shadow-lg">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
-        <h3 className="text-3xl font-bold mb-3 text-gray-800 font-playfair">
+        <h3 className="text-2xl font-bold mb-2 text-gray-800 font-playfair">
           Darmowa Wycena
         </h3>
-        <p className="text-gray-600 font-montserrat leading-relaxed">
-          Skontaktuj się z nami, aby otrzymać bezpłatną wycenę dla Twojego biura, budynku lub domu
+        <p className="text-gray-600 font-montserrat text-sm">
+          Skontaktuj się z nami, aby otrzymać bezpłatną wycenę
         </p>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="bg-red-50 text-red-700 p-4 rounded-xl border border-red-200 text-sm flex items-start">
-            <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-red-50 text-red-700 p-3 rounded-lg border border-red-200 text-sm flex items-start">
+            <svg className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             {error}
@@ -94,7 +94,7 @@ export const ContactForm = ({ onClose }) => {
         )}
         
         <div className="relative">
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3 font-montserrat">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2 font-montserrat">
             Imię i nazwisko *
           </label>
           <div className="relative">
@@ -104,12 +104,12 @@ export const ContactForm = ({ onClose }) => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
+              className="w-full px-3 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
               placeholder="Twoje imię i nazwisko"
               required
             />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
@@ -117,7 +117,7 @@ export const ContactForm = ({ onClose }) => {
         </div>
         
         <div className="relative">
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3 font-montserrat">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 font-montserrat">
             E-mail *
           </label>
           <div className="relative">
@@ -127,12 +127,12 @@ export const ContactForm = ({ onClose }) => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
+              className="w-full px-3 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
               placeholder="Twój e-mail"
               required
             />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
@@ -140,7 +140,7 @@ export const ContactForm = ({ onClose }) => {
         </div>
         
         <div className="relative">
-          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3 font-montserrat">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2 font-montserrat">
             Telefon
           </label>
           <div className="relative">
@@ -150,11 +150,11 @@ export const ContactForm = ({ onClose }) => {
               name="phone"
               value={form.phone}
               onChange={handleChange}
-              className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
+              className="w-full px-3 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
               placeholder="Twój numer telefonu (opcjonalnie)"
             />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </div>
@@ -162,7 +162,7 @@ export const ContactForm = ({ onClose }) => {
         </div>
         
         <div className="relative">
-          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3 font-montserrat">
+          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2 font-montserrat">
             Wiadomość *
           </label>
           <div className="relative">
@@ -171,12 +171,12 @@ export const ContactForm = ({ onClose }) => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 min-h-[120px] resize-none font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
+              className="w-full px-3 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 min-h-[80px] resize-none font-montserrat bg-gray-50 focus:bg-white hover:border-gray-300"
               placeholder="Opisz swoje potrzeby sprzątania..."
               required
             />
-            <div className="absolute top-4 right-3 pointer-events-none">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-3 right-3 pointer-events-none">
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
