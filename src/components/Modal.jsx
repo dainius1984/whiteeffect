@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, children, title }) => {
         </button>
         
         {/* Modal content */}
-        <div className="p-8">
+        <div className="p-6">
           {children}
         </div>
       </div>
