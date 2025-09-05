@@ -58,6 +58,23 @@ export const ContactForm = ({ onClose }) => {
     }
   };
 
+  // Success message component (this was missing!)
+  if (submitted) {
+    return (
+      <div className="bg-gradient-to-br from-green-50 to-emerald-50 text-green-800 p-8 rounded-2xl text-center font-semibold shadow-xl border border-green-200">
+        <div className="flex items-center justify-center mb-4">
+          <div className="bg-green-100 p-3 rounded-full">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        </div>
+        <h4 className="text-xl font-bold mb-2 font-playfair">Dziękujemy za kontakt!</h4>
+        <p className="text-green-700 font-montserrat">Odpowiemy najszybciej jak to możliwe.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="px-2">
       <div className="text-center mb-6">
