@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const EMAILJS_PUBLIC_KEY = "0f8Jce-Gsw4GbjCQ_";
-const EMAILJS_SERVICE_ID = "service_m4uai4d";
-const EMAILJS_TEMPLATE_ID = "template_r7rcz39";
+const EMAILJS_SERVICE_ID = "service_6koaodm";
+const EMAILJS_TEMPLATE_ID = "template_km1j8qq";
 
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
@@ -30,12 +30,18 @@ export const ContactForm = ({ onClose }) => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          title: 'Konsultacje',
+          title: 'Zapytanie o usługi sprzątania',
           name: form.name,
-          time: new Date().toLocaleString(),
-          message: form.message + (form.phone ? `\n\nTelefon: ${form.phone}` : ''),
-          email: form.email,
-          to_email: 'whiteeffect.kontakt@gmail.com'
+          reply_to: form.email, // Changed from 'email' to 'reply_to'
+          phone: form.phone || 'Nie podano', // Separate phone field
+          time: new Date().toLocaleString('pl-PL', {
+            year: 'numeric',
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          }),
+          message: form.message // Clean message without phone concatenation
         }
       );
       setSubmitted(true);
@@ -46,26 +52,11 @@ export const ContactForm = ({ onClose }) => {
       }, 3000);
     } catch (err) {
       setError('Przepraszamy, wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
+      console.error('EmailJS Error:', err);
     } finally {
       setSubmitting(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <div className="bg-gradient-to-br from-green-50 to-emerald-50 text-green-800 p-8 rounded-2xl text-center font-semibold shadow-xl border border-green-200">
-        <div className="flex items-center justify-center mb-4">
-          <div className="bg-green-100 p-3 rounded-full">
-            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-        </div>
-        <h4 className="text-xl font-bold mb-2 font-playfair">Dziękujemy za kontakt!</h4>
-        <p className="text-green-700 font-montserrat">Odpowiemy najszybciej jak to możliwe.</p>
-      </div>
-    );
-  }
 
   return (
     <div className="px-2">
