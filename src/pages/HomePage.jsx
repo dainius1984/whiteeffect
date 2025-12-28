@@ -7,7 +7,13 @@ import Modal from '../components/Modal';
 import { ContactForm } from '../components/ContactForm';
 
 const HomePage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true); // Open modal by default
+  // Check URL parameters to determine if modal should be disabled
+  const shouldDisableModal = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('preview') === 'true' || urlParams.get('noSubscriptionModal') === 'true';
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(!shouldDisableModal()); // Open modal by default unless URL params disable it
 
   useEffect(() => {
     // Make the modal function available globally for the Hero button
