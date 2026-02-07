@@ -10,7 +10,9 @@ const HomePage = () => {
   // Check URL parameters to determine if modal should be disabled
   const shouldDisableModal = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('preview') === 'true' || urlParams.get('noSubscriptionModal') === 'true';
+    return urlParams.get('preview') === 'true' || 
+           urlParams.get('noSubscriptionModal') === 'true' ||
+           urlParams.get('nomodal') === '1';
   };
 
   const [isModalOpen, setIsModalOpen] = useState(!shouldDisableModal()); // Open modal by default unless URL params disable it
