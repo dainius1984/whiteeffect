@@ -3,10 +3,16 @@ import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // Detect mobile immediately on render (SSR-safe)
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768;
+    }
+    return true; // Default to mobile for SSR
+  });
 
   useEffect(() => {
-    // Detect mobile device
+    // Update on resize
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };

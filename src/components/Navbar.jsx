@@ -44,7 +44,15 @@ const Navbar = ({ isTransparent = false }) => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <div className="mr-3">
-            <img src="/img/logo.png" alt="WhiteEffect Logo" className="w-12 h-12" />
+            <img 
+              src="/img/logo.png" 
+              alt="WhiteEffect Logo" 
+              className="w-12 h-12" 
+              width="48" 
+              height="48"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
           <Link to="/" className="text-3xl font-bold text-white font-playfair tracking-wider">
             White<span className="text-blue-300">Effect</span>
